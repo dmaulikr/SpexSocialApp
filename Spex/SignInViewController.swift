@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
 
@@ -17,6 +19,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var signUpButton: UIButton!
     
     @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +27,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         passwordTextField.delegate = self
         usernameTextField.delegate = self
+        
+        
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -41,7 +46,29 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    
+    @IBAction func fbBtnPressed(sender: UIButton!) {
+        
+        let facebookLogin = FBSDKLoginManager()
+        
+        facebookLogin.logIn(withReadPermissions: ["email"], from: self, handler: { (result, error) -> Void in
+            
+            if error != nil {
+                
+                print("facebook login failed. Error \(error)")
+                
+            } else {
+                
+                let accessToken = FBSDKAccessToken.current().tokenString
+                print("successful fb login \(accessToken)")
+                
+            }
+            
+            
+        })
+        
+        
+        
+    }
     
     func configureAssets() {
         
