@@ -63,7 +63,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="TQh-JJ-zau"/>
                                                                 </constraints>
-                                                                <color key="textColor" red="0.1836039424" green="0.21492716670000001" blue="0.2608776391" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="0.13333333333333333" green="0.1803921568627451" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                             </textField>
@@ -109,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="153" y="22"/>
+            <point key="canvasLocation" x="257" y="10"/>
         </scene>
     </scenes>
 </document>

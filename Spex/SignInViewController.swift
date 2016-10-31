@@ -40,6 +40,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self)
         
     }
+    
+    
+    
     func configureAssets() {
         
         self.titleLabel.alpha = 0.0
@@ -54,7 +57,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.usernameTextField.center.y += -20
         self.passwordTextField.center.y += -20
         self.titleLabel.center.y += -20
-        
         
     }
     func fadeInAssets() {
