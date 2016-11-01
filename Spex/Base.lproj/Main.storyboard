@@ -45,7 +45,7 @@
                                                         </constraints>
                                                         <color key="textColor" red="0.1333333333" green="0.18039215689999999" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="va6-Kf-ISg">
                                                         <rect key="frame" x="0.0" y="60" width="300" height="40"/>
@@ -126,11 +126,12 @@
                         <outlet property="signInBtn" destination="Qte-uk-7eY" id="zGU-wK-mAv"/>
                         <outlet property="signUpButton" destination="iC3-FS-gEB" id="G1l-t8-XOS"/>
                         <outlet property="titleLabel" destination="kWZ-JM-hJ2" id="oQF-M6-oLE"/>
+                        <segue destination="CFR-EX-mgP" kind="show" identifier="signedUp" id="mGu-Ge-1tx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giF-7d-mLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="281" y="-368"/>
+            <point key="canvasLocation" x="281" y="-403"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -167,7 +168,7 @@
                                     <color key="titleColor" red="0.1836039424" green="0.21492716670000001" blue="0.2608776391" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="5q1-nO-3y2" kind="presentation" id="NAe-VE-2eB"/>
+                                    <segue destination="5q1-nO-3y2" kind="presentation" identifier="toSignUpPage" id="NAe-VE-2eB"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dBu-1n-uVd">
@@ -196,7 +197,7 @@
                                                                 </constraints>
                                                                 <color key="textColor" red="0.13333333333333333" green="0.1803921568627451" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                             </textField>
                                                             <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3h-74-2hY">
                                                                 <rect key="frame" x="0.0" y="60" width="300" height="40"/>
@@ -319,4 +320,7 @@
             <point key="canvasLocation" x="2028" y="-424"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="mGu-Ge-1tx"/>
+    </inferredMetricsTieBreakers>
 </document>

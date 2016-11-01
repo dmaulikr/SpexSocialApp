@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '999887CE80A2386FC748CF14'
+               BlueprintIdentifier = '93E14498A01C355D769192BF'
                BlueprintName = 'Pods-Spex'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Spex.framework'>

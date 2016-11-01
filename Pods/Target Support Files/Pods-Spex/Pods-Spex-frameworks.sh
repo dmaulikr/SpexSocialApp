@@ -84,10 +84,16 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-Spex/DGElasticPullToRefresh.framework"
   install_framework "Pods-Spex/GTMSessionFetcher.framework"
   install_framework "Pods-Spex/GoogleToolboxForMac.framework"
+  install_framework "Pods-Spex/JSSAlertView.framework"
+  install_framework "Pods-Spex/NVActivityIndicatorView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-Spex/DGElasticPullToRefresh.framework"
   install_framework "Pods-Spex/GTMSessionFetcher.framework"
   install_framework "Pods-Spex/GoogleToolboxForMac.framework"
+  install_framework "Pods-Spex/JSSAlertView.framework"
+  install_framework "Pods-Spex/NVActivityIndicatorView.framework"
 fi

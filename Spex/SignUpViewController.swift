@@ -38,7 +38,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         NotificationCenter.default.addObserver(self, selector:#selector(SignUpViewController.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(SignUpViewController.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-
         
         introAnimation()
     }

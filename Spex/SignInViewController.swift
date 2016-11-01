@@ -10,6 +10,8 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
+import JSSAlertView
+
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
 
@@ -30,9 +32,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         passwordTextField.delegate = self
         usernameTextField.delegate = self
-        
-        
-        
+            
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -62,19 +62,74 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 
                 if error != nil {
                     
-                    print(error!.localizedDescription)
+                    let errorString: String = error!.localizedDescription
+                    print(errorString)
+                    if errorString == STATUS_ACCOUNT_NONEXIST {
+                        
+                        self.showAlertWithTwoButtons(titleAlert: "User Not Found", textAlert: "Would you like to create an account?", buttonTextAlert: "OK", cancelButtonTextAlert: "Cancel", colorAlert: COLOR_WAX_FLOWER)
+                        
+                        print("the account doesnt exist-------------->")
                     
+                    } else if errorString == STATUS_EMAIL_FORMAT{
+                        
+                        self.showAlertWithOneButton(titleAlert: "Problem With Email", textAlert: "Please Enter A Valid Email", buttonTextAlert: "Try Again", colorAlert: COLOR_WAX_FLOWER)
+                        
+                        print("please enter a valid email address-------------->")
+                        
+                    } else {
+                        
+                        self.showAlertWithOneButton(titleAlert: "Incorrect!", textAlert: "Incorrect Username Or Password", buttonTextAlert: "Try Again", colorAlert: COLOR_WAX_FLOWER)
+                        
+                    }
                 }
-                
             })
         } else {
             
             print("email and password required")
+            showAlertWithOneButton(titleAlert: "Missing Fields!", textAlert: "Email & Password Required.", buttonTextAlert: "Try Again", colorAlert: COLOR_WAX_FLOWER)
             
         }
         
     }
     
+    func showAlertWithTwoButtons(titleAlert: String, textAlert: String, buttonTextAlert: String, cancelButtonTextAlert: String, colorAlert: UIColor) {
+        
+        let alertview = JSSAlertView().show(
+            self,
+            title: titleAlert,
+            text: textAlert,
+            buttonText: buttonTextAlert,
+            cancelButtonText: cancelButtonTextAlert,
+            color: colorAlert
+        )
+        alertview.setButtonFont("Avenir-Light")
+        alertview.setTextFont("Avenir-Light")
+        alertview.setTitleFont("Avenir-Light")
+        alertview.setTextTheme(.light)
+        alertview.addAction(self.goToSignUp)
+        
+    }
+    func showAlertWithOneButton(titleAlert: String, textAlert: String, buttonTextAlert: String, colorAlert: UIColor){
+        
+        let alertview = JSSAlertView().show(
+            self,
+            title: titleAlert,
+            text: textAlert,
+            buttonText: buttonTextAlert,
+            color: colorAlert
+        )
+        alertview.setButtonFont("Avenir-Light")
+        alertview.setTextFont("Avenir-Light")
+        alertview.setTitleFont("Avenir-Light")
+        alertview.setTextTheme(.light)
+        
+    }
+    
+    func goToSignUp() {
+        
+        self.performSegue(withIdentifier: SEGUE_TO_SIGN_UP_PAGE, sender: nil)
+        
+    }
     
     @IBAction func fbBtnPressed(sender: UIButton!) {
         
