@@ -140,6 +140,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             if error != nil {
                 
                 print("facebook login failed. Error \(error)")
+                self.showAlertWithOneButton(titleAlert: "Failed", textAlert: "Facebook Login Failed", buttonTextAlert: "OK", colorAlert: COLOR_WAX_FLOWER)
                 
             } else if result!.isCancelled {
                  print("FBLogin cancelled")
@@ -159,7 +160,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     func firebaseLogin(_ credential: FIRAuthCredential) {
         FIRAuth.auth()?.signIn(with: credential) { (user, error) in
             if error != nil{
-                print("login failed")
+                
+                self.showAlertWithOneButton(titleAlert: "Failed", textAlert: "Facebook Login Failed", buttonTextAlert: "OK", colorAlert: COLOR_WAX_FLOWER)
+                
+                
             } else {
                 
                 print("Logged In!")
