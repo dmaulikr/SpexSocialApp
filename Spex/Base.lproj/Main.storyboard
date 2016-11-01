@@ -31,6 +31,9 @@
                                 <state key="normal" title="SIGN IN">
                                     <color key="titleColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OZN-OT-DzO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7XD-nM-btf">
                                 <rect key="frame" x="16" y="569" width="343" height="30"/>
@@ -60,7 +63,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wma-hh-Hea">
                                                         <rect key="frame" x="0.0" y="71" width="300" height="100"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0YY-zv-nYh">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0YY-zv-nYh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
                                                                 <color key="backgroundColor" red="0.83425593376159668" green="0.83423095941543579" blue="0.83424508571624756" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
@@ -122,6 +125,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomLayoutConstraint" destination="bT2-et-jez" id="LNq-bm-TMC"/>
+                        <outlet property="facebookLoginBtn" destination="bf1-nx-C6m" id="e67-5K-u2z"/>
                         <outlet property="passwordTextField" destination="m3h-74-2hY" id="7jv-Nd-t4K"/>
                         <outlet property="signInButton" destination="aZW-wn-dRI" id="Ntt-VB-1zM"/>
                         <outlet property="signUpButton" destination="7XD-nM-btf" id="ufS-BP-U6f"/>

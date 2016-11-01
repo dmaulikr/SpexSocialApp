@@ -21,6 +21,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var facebookLoginBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,6 +37,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
+        if UserDefaults.standard.value(forKey: KEY_UID) != nil {
+            
+            self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
+            
+        }
+        
         NotificationCenter.default.addObserver(self, selector:#selector(SignInViewController.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(SignInViewController.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
@@ -46,6 +54,27 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self)
         
     }
+    
+    @IBAction func signInBtnPressed(_ sender: Any) {
+        if let email = usernameTextField.text, email != "", let pwd = passwordTextField.text, pwd != "" {
+            
+            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (FIRUser, error) in
+                
+                if error != nil {
+                    
+                    print(error!.localizedDescription)
+                    
+                }
+                
+            })
+        } else {
+            
+            print("email and password required")
+            
+        }
+        
+    }
+    
     
     @IBAction func fbBtnPressed(sender: UIButton!) {
         
@@ -69,12 +98,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 self.firebaseLogin(credential)
                 
             }
-            
-            
         })
-        
-        
-        
     }
     
     func firebaseLogin(_ credential: FIRAuthCredential) {
@@ -85,7 +109,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 
                 print("Logged In!")
                 UserDefaults.standard.set(user?.uid, forKey: KEY_UID)
-                self.performSegue(withIdentifier: "loggedIn", sender: nil)
+                self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
             }
         }
     }
@@ -99,7 +123,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.signInButton.isHidden = true
         self.signInButton.center.y += self.signInButton.frame.height
         
-        self.signUpButton.alpha = 0.0
+        self.fadeOutButtons()
         
         self.usernameTextField.center.y += -20
         self.passwordTextField.center.y += -20
@@ -109,8 +133,19 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     func fadeInAssets() {
         
         self.titleLabel.alpha = 1.0
-        self.signUpButton.alpha = 1.0
+        
     
+    }
+    func fadeInButtons() {
+        self.signUpButton.alpha = 1.0
+        self.facebookLoginBtn.alpha = 1.0
+        
+    }
+    func fadeOutButtons() {
+        
+        self.signUpButton.alpha = 0.0
+        self.facebookLoginBtn.alpha = 0.0
+        
     }
     func fadeInTextFields() {
         
@@ -135,7 +170,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         UIView.animate(withDuration: 2.0, delay: 0.7, options: .curveEaseOut, animations: {
             
-           self.fadeInAssets()
+            self.fadeInAssets()
+            self.fadeInButtons()
+            
             self.animateTitleLabel()
         }, completion: nil)
         
@@ -172,7 +209,16 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.bottomLayoutConstraint.constant = 0
         
     }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        if self.facebookLoginBtn.alpha != 0.0  && self.signUpButton.alpha != 0.0{
+        
+            UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+                self.fadeOutButtons()
+            }, completion: nil)
+            
+        }
+        
         if textField.tag == 1 {
             
             self.ShowSignInButton()
@@ -180,7 +226,16 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if self.facebookLoginBtn.alpha == 0.0  && self.signUpButton.alpha == 0.0{
+            
+            UIView.animate(withDuration: 1.0, delay: 0.4, options: .curveEaseOut, animations: {
+                self.fadeInButtons()
+            }, completion: nil)
+        }
+        
         self.view.endEditing(true)
         return false
     }
