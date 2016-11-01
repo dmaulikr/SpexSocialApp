@@ -18,6 +18,7 @@
 		8835064C1DC71AF0004EC1BF /* SpexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835064B1DC71AF0004EC1BF /* SpexTests.swift */; };
 		8835065A1DC71B27004EC1BF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883506591DC71B27004EC1BF /* SignInViewController.swift */; };
 		884C58011DC79C30008FB8F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C58001DC79C30008FB8F5 /* Constants.swift */; };
+		88A4BDC91DC8401300F2169A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A4BDC81DC8401300F2169A /* SignUpViewController.swift */; };
 		88FC5EB81DC7B34200681A23 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FC5EB51DC7B34200681A23 /* Bolts.framework */; };
 		88FC5EB91DC7B34200681A23 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FC5EB61DC7B34200681A23 /* FBSDKCoreKit.framework */; };
 		88FC5EBA1DC7B34200681A23 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FC5EB71DC7B34200681A23 /* FBSDKLoginKit.framework */; };
@@ -50,6 +51,7 @@
 		8835064D1DC71AF0004EC1BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		883506591DC71B27004EC1BF /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		884C58001DC79C30008FB8F5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		88A4BDC81DC8401300F2169A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		88FC5EB51DC7B34200681A23 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		88FC5EB61DC7B34200681A23 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		88FC5EB71DC7B34200681A23 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				883506591DC71B27004EC1BF /* SignInViewController.swift */,
+				88A4BDC81DC8401300F2169A /* SignUpViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88A4BDC91DC8401300F2169A /* SignUpViewController.swift in Sources */,
 				883506341DC71AEF004EC1BF /* AppDelegate.swift in Sources */,
 				8835063C1DC71AEF004EC1BF /* Spex.xcdatamodeld in Sources */,
 				8835065A1DC71B27004EC1BF /* SignInViewController.swift in Sources */,
