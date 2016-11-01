@@ -52,7 +52,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
-        
+        configureAssets()
     }
     
     @IBAction func signInBtnPressed(_ sender: Any) {

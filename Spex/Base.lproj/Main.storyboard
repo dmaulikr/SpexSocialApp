@@ -101,6 +101,9 @@
                                 <state key="normal" title="Have An Account? Sign In">
                                     <color key="titleColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInBtnPressed:" destination="5q1-nO-3y2" eventType="touchUpInside" id="bOp-Ls-8Ma"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1836039424" green="0.21492716670000001" blue="0.2608776391" alpha="1" colorSpace="calibratedRGB"/>
@@ -116,6 +119,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomLayoutConstraint" destination="8qb-hA-R74" id="bmR-o5-l1r"/>
                         <outlet property="confirmPasswordField" destination="NtY-Zo-Kyu" id="OI7-DK-rkM"/>
                         <outlet property="emailTextField" destination="4UG-QO-WiL" id="Cde-dG-Zu0"/>
                         <outlet property="passwordField" destination="va6-Kf-ISg" id="g7B-bZ-69n"/>
