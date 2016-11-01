@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKLoginKit
 import FBSDKCoreKit
+import Firebase
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
 
@@ -56,10 +57,16 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 
                 print("facebook login failed. Error \(error)")
                 
+            } else if result!.isCancelled {
+                 print("FBLogin cancelled")
+                
             } else {
                 
                 let accessToken = FBSDKAccessToken.current().tokenString
                 print("successful fb login \(accessToken)")
+                let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessToken!)
+                
+                self.firebaseLogin(credential)
                 
             }
             
@@ -68,6 +75,19 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         
         
+    }
+    
+    func firebaseLogin(_ credential: FIRAuthCredential) {
+        FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            if error != nil{
+                print("login failed")
+            } else {
+                
+                print("Logged In!")
+                UserDefaults.standard.set(user?.uid, forKey: KEY_UID)
+                self.performSegue(withIdentifier: "loggedIn", sender: nil)
+            }
+        }
     }
     
     func configureAssets() {

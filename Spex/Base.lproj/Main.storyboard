@@ -127,11 +127,30 @@
                         <outlet property="signUpButton" destination="7XD-nM-btf" id="ufS-BP-U6f"/>
                         <outlet property="titleLabel" destination="iIY-pU-Miq" id="IKs-HV-jDg"/>
                         <outlet property="usernameTextField" destination="0YY-zv-nYh" id="4et-Nk-Udi"/>
+                        <segue destination="yko-RY-gc0" kind="show" identifier="loggedIn" id="ksM-As-lQY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257" y="10"/>
+            <point key="canvasLocation" x="332" y="-22"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HKq-rD-fff">
+            <objects>
+                <viewController id="yko-RY-gc0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GZg-Fb-wt5"/>
+                        <viewControllerLayoutGuide type="bottom" id="oGJ-xl-lnu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h2f-Xm-Bb7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1836039424" green="0.21492716670000001" blue="0.2608776391" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fsh-Ke-Xhg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="-22"/>
         </scene>
     </scenes>
 </document>
