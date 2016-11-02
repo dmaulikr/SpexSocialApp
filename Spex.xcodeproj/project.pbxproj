@@ -19,6 +19,10 @@
 		8835065A1DC71B27004EC1BF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883506591DC71B27004EC1BF /* SignInViewController.swift */; };
 		884C58011DC79C30008FB8F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884C58001DC79C30008FB8F5 /* Constants.swift */; };
 		88A4BDC91DC8401300F2169A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A4BDC81DC8401300F2169A /* SignUpViewController.swift */; };
+		88B0F3F61DC975EB0002DA4D /* navBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0F3F51DC975EB0002DA4D /* navBar.swift */; };
+		88B0F3F81DC976F60002DA4D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0F3F71DC976F60002DA4D /* ProfileViewController.swift */; };
+		88B0F3FA1DC979070002DA4D /* SettingsProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0F3F91DC979070002DA4D /* SettingsProfileTableViewController.swift */; };
+		88B0F3FC1DC97C8A0002DA4D /* MenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0F3FB1DC97C8A0002DA4D /* MenuTransitionManager.swift */; };
 		88FC5EB81DC7B34200681A23 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FC5EB51DC7B34200681A23 /* Bolts.framework */; };
 		88FC5EB91DC7B34200681A23 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FC5EB61DC7B34200681A23 /* FBSDKCoreKit.framework */; };
 		88FC5EBA1DC7B34200681A23 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FC5EB71DC7B34200681A23 /* FBSDKLoginKit.framework */; };
@@ -52,6 +56,10 @@
 		883506591DC71B27004EC1BF /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		884C58001DC79C30008FB8F5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		88A4BDC81DC8401300F2169A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		88B0F3F51DC975EB0002DA4D /* navBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = navBar.swift; sourceTree = "<group>"; };
+		88B0F3F71DC976F60002DA4D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		88B0F3F91DC979070002DA4D /* SettingsProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsProfileTableViewController.swift; sourceTree = "<group>"; };
+		88B0F3FB1DC97C8A0002DA4D /* MenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTransitionManager.swift; sourceTree = "<group>"; };
 		88FC5EB51DC7B34200681A23 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		88FC5EB61DC7B34200681A23 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		88FC5EB71DC7B34200681A23 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -151,6 +159,8 @@
 			children = (
 				883506591DC71B27004EC1BF /* SignInViewController.swift */,
 				88A4BDC81DC8401300F2169A /* SignUpViewController.swift */,
+				88B0F3F71DC976F60002DA4D /* ProfileViewController.swift */,
+				88B0F3F91DC979070002DA4D /* SettingsProfileTableViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -158,6 +168,8 @@
 		883506571DC71B05004EC1BF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				88B0F3F51DC975EB0002DA4D /* navBar.swift */,
+				88B0F3FB1DC97C8A0002DA4D /* MenuTransitionManager.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -357,6 +369,10 @@
 				8835063C1DC71AEF004EC1BF /* Spex.xcdatamodeld in Sources */,
 				8835065A1DC71B27004EC1BF /* SignInViewController.swift in Sources */,
 				884C58011DC79C30008FB8F5 /* Constants.swift in Sources */,
+				88B0F3FA1DC979070002DA4D /* SettingsProfileTableViewController.swift in Sources */,
+				88B0F3F61DC975EB0002DA4D /* navBar.swift in Sources */,
+				88B0F3FC1DC97C8A0002DA4D /* MenuTransitionManager.swift in Sources */,
+				88B0F3F81DC976F60002DA4D /* ProfileViewController.swift in Sources */,
 				880566971DC7FC28004E2B52 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

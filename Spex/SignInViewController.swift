@@ -58,29 +58,28 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signInBtnPressed(_ sender: Any) {
         if let email = usernameTextField.text, email != "", let pwd = passwordTextField.text, pwd != "" {
             
-            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (FIRUser, error) in
+            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (User, error) in
                 
                 if error != nil {
                     
                     let errorString: String = error!.localizedDescription
                     print(errorString)
                     if errorString == STATUS_ACCOUNT_NONEXIST {
-                        
                         self.showAlertWithTwoButtons(titleAlert: "User Not Found", textAlert: "Would you like to create an account?", buttonTextAlert: "OK", cancelButtonTextAlert: "Cancel", colorAlert: COLOR_WAX_FLOWER)
-                        
                         print("the account doesnt exist-------------->")
-                    
                     } else if errorString == STATUS_EMAIL_FORMAT{
-                        
                         self.showAlertWithOneButton(titleAlert: "Problem With Email", textAlert: "Please Enter A Valid Email", buttonTextAlert: "Try Again", colorAlert: COLOR_WAX_FLOWER)
-                        
                         print("please enter a valid email address-------------->")
                         
                     } else {
-                        
-                        self.showAlertWithOneButton(titleAlert: "Incorrect!", textAlert: "Incorrect Username Or Password", buttonTextAlert: "Try Again", colorAlert: COLOR_WAX_FLOWER)
-                        
+                        self.showAlertWithOneButton(titleAlert: "Incorrect!", textAlert: "Incorrect Email Or Password", buttonTextAlert: "Try Again", colorAlert: COLOR_WAX_FLOWER)
                     }
+                    
+                } else {
+                    
+                    UserDefaults.standard.set(User?.uid, forKey: KEY_UID)
+                    self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
+                    
                 }
             })
         } else {
