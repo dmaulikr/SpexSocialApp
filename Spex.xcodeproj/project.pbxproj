@@ -23,6 +23,7 @@
 		88B0F3F81DC976F60002DA4D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0F3F71DC976F60002DA4D /* ProfileViewController.swift */; };
 		88B0F3FA1DC979070002DA4D /* SettingsProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0F3F91DC979070002DA4D /* SettingsProfileTableViewController.swift */; };
 		88B0F3FC1DC97C8A0002DA4D /* MenuTransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0F3FB1DC97C8A0002DA4D /* MenuTransitionManager.swift */; };
+		88B0F3FE1DC994F20002DA4D /* TabBarMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B0F3FD1DC994F20002DA4D /* TabBarMainController.swift */; };
 		88FC5EB81DC7B34200681A23 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FC5EB51DC7B34200681A23 /* Bolts.framework */; };
 		88FC5EB91DC7B34200681A23 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FC5EB61DC7B34200681A23 /* FBSDKCoreKit.framework */; };
 		88FC5EBA1DC7B34200681A23 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88FC5EB71DC7B34200681A23 /* FBSDKLoginKit.framework */; };
@@ -60,6 +61,7 @@
 		88B0F3F71DC976F60002DA4D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		88B0F3F91DC979070002DA4D /* SettingsProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsProfileTableViewController.swift; sourceTree = "<group>"; };
 		88B0F3FB1DC97C8A0002DA4D /* MenuTransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTransitionManager.swift; sourceTree = "<group>"; };
+		88B0F3FD1DC994F20002DA4D /* TabBarMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarMainController.swift; sourceTree = "<group>"; };
 		88FC5EB51DC7B34200681A23 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		88FC5EB61DC7B34200681A23 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		88FC5EB71DC7B34200681A23 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				88A4BDC81DC8401300F2169A /* SignUpViewController.swift */,
 				88B0F3F71DC976F60002DA4D /* ProfileViewController.swift */,
 				88B0F3F91DC979070002DA4D /* SettingsProfileTableViewController.swift */,
+				88B0F3FD1DC994F20002DA4D /* TabBarMainController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				88B0F3FC1DC97C8A0002DA4D /* MenuTransitionManager.swift in Sources */,
 				88B0F3F81DC976F60002DA4D /* ProfileViewController.swift in Sources */,
 				880566971DC7FC28004E2B52 /* DataService.swift in Sources */,
+				88B0F3FE1DC994F20002DA4D /* TabBarMainController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

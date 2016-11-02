@@ -37,11 +37,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
-        if UserDefaults.standard.value(forKey: KEY_UID) != nil {
-            
-            self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
-            
-        }
+//        if UserDefaults.standard.value(forKey: KEY_UID) != nil {
+//            
+//            self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
+//            
+//        }
         
         NotificationCenter.default.addObserver(self, selector:#selector(SignInViewController.keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(SignInViewController.keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -78,8 +78,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 } else {
                     
                     UserDefaults.standard.set(User?.uid, forKey: KEY_UID)
-                    self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
-                    
+                    //self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
+                    self.dismiss(animated: true, completion: nil)
                 }
             })
         } else {
@@ -167,8 +167,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 
                 print("Logged In!")
                 UserDefaults.standard.set(user?.uid, forKey: KEY_UID)
-                self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
+                //self.performSegue(withIdentifier: SEGUE_LOGGED_IN, sender: nil)
+                self.dismiss(animated: true, completion: nil)
             }
+            
         }
     }
     

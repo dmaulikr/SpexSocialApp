@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsProfileTableViewController: UITableViewController {
 
@@ -40,8 +41,14 @@ class SettingsProfileTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 2 {
-            let profileVC = ProfileViewController()
-            //profileVC.backToSignInVC()
+            
+            try! FIRAuth.auth()!.signOut()
+            UserDefaults.standard.removeObject(forKey: KEY_UID)
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let signInViewController = storyboard.instantiateViewController(withIdentifier: "signInViewControllerID") as! SignInViewController
+            self.present(signInViewController, animated: false, completion: nil)
+            
             
             
         }

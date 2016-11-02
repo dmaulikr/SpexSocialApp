@@ -18,10 +18,15 @@ class ProfileViewController: UIViewController, MenuTransitionManagerDelegate {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        if UserDefaults.standard.value(forKey: KEY_UID) == nil {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let signInViewController = storyboard.instantiateViewController(withIdentifier: "signInViewControllerID") as! SignInViewController
+            self.present(signInViewController, animated: false, completion: nil)
+        }
     }
+    
     
 
     @IBAction func unwindToHome(segue: UIStoryboardSegue) {
